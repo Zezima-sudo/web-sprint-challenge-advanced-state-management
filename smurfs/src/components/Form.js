@@ -1,30 +1,34 @@
 import React from 'react'
 
-const Form = (props) => {
-    const handleChange = () => {}
+const Form = ({form, handleChange}) => {
+
+
+    
 
     return (
         <form>
             <input 
             name='name'
             placeholder='enter name'
-            value={props.formValue.name}
-            onChange={props.handleChange}
+            value={form.name}
+            onChange={handleChange}
            />
            <input 
                name='age'
                placeholder='enter age'
-               value={props.formValue.age}
-               onChange={props.handleChange}
+               value={form.age}
+               onChange={handleChange}
            />
            <input 
                name='height'
                placeholder='enter height'
-               value={props.formValue.height}
-               onChange={props.handleChange}
+               value={form.height}
+               onChange={handleChange}
            />
         </form>
-    )
-}
+        )
+    
+    }
+
 
 export default Form

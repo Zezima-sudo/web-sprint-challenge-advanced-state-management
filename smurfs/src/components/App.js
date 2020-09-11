@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {connect} from 'react-redux'
-import {smurfGet,smurfPost,selectYourSmurf} from '../actions/actions'
+import {smurfGet,smurfPost} from '../actions/actions'
 import Form from './Form' //need to od
 import {List} from '../components/List'// need to do
 import './App.css'
 
-const App = ({smurfPost, smurf, selectYourSmurf}) => {
+function App ({smurfPost, smurf, selectYourSmurf}) {
   const [form, setForm] = useState({
     name: '',
     age: '',
@@ -14,8 +14,8 @@ const App = ({smurfPost, smurf, selectYourSmurf}) => {
     })
 
     const submitHandler = e => {
-      const smurfState = 
-      {...form,
+      const smurfState = {
+        ...form,
         id: Date.now()
       }
       smurfPost(smurfState)

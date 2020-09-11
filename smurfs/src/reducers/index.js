@@ -1,4 +1,4 @@
-import {START, ADD_SMURF, SELECT } from '../actions/'
+import {LOADING, ADD_SMURF, SELECT } from '../actions/actions'
 const DEL_SMURF = 'DEL_SMURF'
 
 export const initialState = {
@@ -15,7 +15,7 @@ export const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case START:
+        case LOADING:
             return {
                 ...state,
                 isLoading: true
@@ -28,8 +28,8 @@ const reducer = (state = initialState, action) => {
                 }
         case SELECT:
             return {
-                smurf: state.smurf.map((smurfs, idx) =>
-                  idx === action.idx
+                smurf: state.smurf.map((smurfs, id) =>
+                  id === action.idx
                     ? { ...smurfs, selected: !smurfs.selected }
                     : smurfs
                 )
