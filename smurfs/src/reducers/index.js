@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
         case SELECT:
             return {
                 smurf: state.smurf.map((smurfs, id) =>
-                  id === action.idx
+                  id === action.id
                     ? { ...smurfs, selected: !smurfs.selected }
                     : smurfs
                 )
